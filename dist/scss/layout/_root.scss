@@ -1,0 +1,12 @@
+/* defaults to dark theme */
+@media (prefers-color-scheme: dark) {
+  body {
+    $text-color: color(palette-light);
+    $bkg-color: color(darktheme-bg);
+  }
+
+  body.light-theme {
+    $text-color: #222;
+    $color-primary: rgb(201, 98, 98);
+  }
+}

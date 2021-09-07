@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="DE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domaeae.de | WebEntwickler</title>
+    <!-- - -->
+    <meta name='theme-color' content='#3d50a7' />
+    <link rel='shortlink' type="image/x-icon" href='./dist/img/favicon.ico' />
+    <link rel="shortcut icon" href="./dist/img/favicon.ico">
+    <!-- 🔌 Import & Links -->
+    <link rel="stylesheet" href="./dist/css/master.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:400,500,600,700">
+</head>
+
+<body>
+    <nav>
+        <!-- Navigation -->
+        <div class="b-nav">
+            <ul class="b-nav-list">
+                <li class="b-nav-itemlist"><a class="b-link navsitem" href="https://codepen.io/mblode/"
+                        target="_blank">CodePen</a></li>
+                <li>
+                    <a class="b-link" href="#" target="_self">Meine Projekte</a>
+                    <ul class="b-dropdown">
+                        <li class="b-dropdown-list">
+                            <a href="./sites/portfolio.html" class="b-link">
+                                <i class="bx bxs-spreadsheet bx-fw"></i>Portfolio </a>
+                        </li>
+                        <li class="b-dropdown-list">
+                            <a href="https://github.com/Domaeae" class="b-link" target="_blank">
+                                <i class="bx bxs-cloud bx-fw"></i>Github Profil</a>
+                        </li>
+                        <li>
+                            <a href="https://codepen.io/Domaeae" class="b-link" target="_blank">
+                                <i class="bx bxl-codepen bx-fw"></i>Codepen Profil</a>
+                        </li>
+                        <!-- <li>
+                            <a href="#!"><i class='bx bxs-cloud bx-fw'></i>cloudHosting</a>
+                        </li> -->
+                    </ul>
+                </li>
+
+                <li class="b-nav-itemlist"><a class="b-link navsitem" href="https://codepen.io/mblode/"
+                        target="_blank">CodePen</a></li>
+                <li class="b-nav-itemlist"><a class="b-link navsitem" href="https://dribbble.com/mblode"
+                        target="_blank">Dribbble</a></li>
+            </ul>
+        </div>
+
+        <!-- Menu -->
+        <div class="b-container">
+            <div class="b-menu">
+                <div class="b-bun b-bun--top"></div>
+                <div class="b-bun b-bun--mid"></div>
+                <div class="b-bun b-bun--bottom"></div>
+            </div>
+            <!-- Burger-Brand -->
+            <!-- <a href="#" class="b-brand">Domaeae.de</a> -->
+            <a href="#" class="b-brand">
+                <img src="./dist/img/domaeae-wide-white.png" id="logo-white" alt="logo"
+                    class="b-brand logo-open b-open-anin">
+                <img src="./dist/img/domaeae-wide-dark.png" id="logo-dark" alt="logo" class="b-brand b-open-anout"
+                    style="display: none;">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+
+            <div class="header-image">
+                <!-- --IMAGE-- -->
+                &nbsp;
+            </div>
+
+            <div class="header-branding"></div>
+
+
+
+        </div>
+    </header>
+
+
+    <!-- Main -->
+
+    <main>
+        <h2>Heading Text</h2>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script>
+        'use strict';
+
+        (function () {
+            var body = document.body;
+            var burgerMenu = document.getElementsByClassName('b-menu')[0];
+            var burgerMenu_value = 0;
+            var burgerContain = document.getElementsByClassName('b-container')[0];
+            var burgerNav = document.getElementsByClassName('b-nav')[0];
+            const $navbar_dropdown = $("nav ul li a:not(:only-child)"); //<A> with Children
+            // Logos
+            var logo_white = $('#logo-white');
+            var logo_dark = $('#logo-dark');
+
+
+            $navbar_dropdown.click(function (e) {
+                $(this).siblings(".b-dropdown").toggle();
+                $(".nav-dropdown").not($(this).siblings()).hide();
+                e.stopPropagation();
+            });
+
+
+            burgerMenu.addEventListener('click', function toggleClasses() {
+
+                [body, burgerContain, burgerNav].forEach(function (el) {
+                    el.classList.toggle('open');
+                });
+
+
+                if (burgerMenu_value == 0) {
+                    $('#logo-dark').toggleClass('logo-open');
+                    $('#logo-white').toggleClass('logo-open');
+                    burgerMenu_value++;
+                } else {
+                    $('#logo-white').toggleClass('logo-open');
+                    $('#logo-dark').toggleClass('logo-open');
+                    // $('#logo-white').toggleClass('logo-open');
+                    // $('#logo-dark').toggleClass('logo-open');
+                    burgerMenu_value--;
+                }
+            }, false);
+
+
+
+            function s() {
+                $('#logo-white').toggleClass('logo-open');
+                $('#logo-dark').toggleClass('logo-open');
+            }
+        })();
+
+    </script>
+
+</body>
+
+</html>

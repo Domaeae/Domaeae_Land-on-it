@@ -1,0 +1,141 @@
+.card-ui {
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  border-radius: 0.35rem;
+  border: none;
+  -webkit-box-shadow: 0 1px 15px 1px rgba(62, 57, 107, 0.07);
+  box-shadow: 0 1px 15px 1px rgba(62, 57, 107, 0.07);
+}
+
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 75vw;
+  margin: 0 auto;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: 0.5em;
+  border: none;
+  box-shadow: 8px 10px 16px rgba(62, 57, 107, 10%);
+  animation: 275ms cubic-bezier(0.93, 0.74, 0.91, 0.8) 0s 1 onloadfadeIn;
+
+  .card-content {
+    // font-family: $font-secondary !important;
+    // font-family: $font-primary;
+    font-weight: normal;
+    font-size: 0.9em;
+    padding: 20px 25px;
+  }
+}
+.card-1 {
+  margin: 15px 0 !important;
+}
+
+/*
+    Container => Content
+  ===================== */
+#content {
+  h2.content-heading {
+    font-family: $font-heading;
+    text-decoration: underline;
+  }
+}
+.content-container {
+  width: 85vw;
+  margin: 0 auto;
+  padding: 15px 0;
+
+  h3 {
+    font-family: $font-secondary;
+    font-size: 1.51em;
+    margin: 15px 0 7px 0;
+    letter-spacing: 0.05em;
+    // text-decoration: underline;
+  }
+
+  p {
+    font-family: $font-primary;
+    font-size: 1.1em;
+  }
+}
+/*  ====================/>  */
+
+@keyframes onloadfadeIn {
+  0% {
+    // box-shadow: 8px 10px 16px rgba(62, 57, 107, 10%);
+    /* position: relative;
+    top: -15px;
+    left: -15px;*/
+    opacity: 0.5;
+  }
+
+  100% {
+    /*position: relative;
+    top: 0;
+    left: 0;
+    transform: translateX(0);*/
+    opacity: 1;
+  }
+}
+
+.card-form {
+  .card-content {
+    text-align: center;
+
+    label {
+      width: 225px;
+      text-align: left;
+      margin: 0 auto;
+      font-family: $font-secondary;
+      font-weight: 600;
+      display: block;
+      padding-top: 15px;
+    }
+
+    input {
+      width: 225px;
+      padding: 0.35em 0.35em;
+      outline: none;
+      font-family: $font-secondary;
+      border: 0;
+      border-bottom: 0.05em solid rgb(54, 66, 175);
+      // border-radius: 1px;
+      transition: all 210ms ease-in;
+
+      &:focus {
+        border-color: color(color-dark);
+        border-width: 0.1em;
+        width: calc(225px + 0.6em);
+        padding: 0.35em 0.65em;
+        // border-width: 0.1em;
+      }
+    }
+
+    button {
+      margin-top: 35px;
+    }
+  }
+}
+
+.card-alert {
+  font-family: $font-secondary;
+  font-size: 0.85em;
+  width: 45%;
+  background: red;
+  padding: 0.34em 1em;
+  border-radius: 9px;
+  border: 0.15em solid rgb(255, 69, 171);
+  margin: 17px auto 0 auto;
+}
